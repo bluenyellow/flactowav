@@ -11,7 +11,7 @@ $out= -join("$preout","\","$meno", ".", "wav")
 
 
 
-C:\Users\adamica\Documents\ffmpeg-master-latest-win64-gpl\ffmpeg-master-latest-win64-gpl\bin\ffmpeg.exe -i $menoi $out
+C:\Users\user\Documents\ffmpeg-master-latest-win64-gpl\ffmpeg-master-latest-win64-gpl\bin\ffmpeg.exe -i $menoi $out
 
 Remove-Item -LiteralPath $menoi
 
