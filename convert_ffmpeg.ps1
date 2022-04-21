@@ -1,17 +1,18 @@
-﻿$foldre=Get-ChildItem -Recurse -Force | Where {$_.Extension -eq '.flac'}
+$foldre=Get-ChildItem -Recurse -Force | Where {$_.Extension -eq '.flac'}
 
 foreach($item in $foldre){
 
 
-$menoi=$item.Name
+$menoi=$item.FullName
 
 $meno=$item.BaseName
-$out= -join("$meno", ".", "wav")
+$preout=$item.Directory.FullName
+$out= -join("$preout","\","$meno", ".", "wav")
 
 
 
-ffmpeg -i $menoi $out
+C:\Users\adamica\Documents\ffmpeg-master-latest-win64-gpl\ffmpeg-master-latest-win64-gpl\bin\ffmpeg.exe -i $menoi $out
 
-Remove-Item $menoi
+Remove-Item -LiteralPath $menoi
 
 }
